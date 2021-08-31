@@ -1,32 +1,34 @@
-import { Flex, Stack, Image, Text, Box, Divider } from '@chakra-ui/react';
+import { Grid, GridItem } from "@chakra-ui/layout";
+import { Option } from "../option";
 
 export function Options() {
   return (
-    <Flex w="100%" justify="center" mt="24" textAlign="center" display="flex">
-      <Stack direction={["column", "row"]} spacing="48" mx="auto">
-        <Box align="center">
-          <Image boxSize="100px" src="/nightlife.svg" alt="Vida noturna" />
-          <Text fontSize="4xl" color="gray.900" mt="8" fontWeight="500">vida noturna</Text>
-        </Box>
-        <Box align="center">
-          <Image boxSize="100px" src="/beach.svg" alt="Vida noturna" />
-          <Text fontSize="4xl" color="gray.900" mt="8" fontWeight="500">praia</Text>
-        </Box>
-        <Box align="center">
-          <Image boxSize="100px" src="/modern.svg" alt="Vida noturna" />
-          <Text fontSize="4xl" color="gray.900" mt="8" fontWeight="500">moderno</Text>
-        </Box>
-        <Box align="center">
-          <Image boxSize="100px" src="/classic.svg" alt="Vida noturna" />
-          <Text fontSize="4xl" color="gray.900" mt="8" fontWeight="500">clássico</Text>
-        </Box>
-        <Box align="center">
-          <Image boxSize="100px" src="/earth.svg" alt="Vida noturna" />
-          <Text fontSize="4xl" color="gray.900" mt="8" fontWeight="500">e mais...</Text>
-        </Box>
-
-      </Stack>
-
-    </Flex>
-  );
+    <Grid
+      templateColumns={["1fr 1fr", "1fr 1fr", "1fr 1fr", "repeat(5, 1fr)"]}
+      w="100%"
+      justify="space-between"
+      align="center"
+      mt={["10", "32"]}
+      mx="auto"
+      maxW="1160px"
+      flexWrap="wrap"
+      gap={[1, 5]}
+    >
+      <GridItem>
+        <Option icon="nightlife" text="vida noturna" />
+      </GridItem>
+      <GridItem>
+        <Option icon="beach" text="praia" />
+      </GridItem>
+      <GridItem>
+        <Option icon="modern" text="moderno" />
+      </GridItem>
+      <GridItem>
+        <Option icon="classic" text="clássico" />
+      </GridItem>
+      <GridItem colSpan={[2, 2, 2, 1]}>
+        <Option icon="earth" text="e mais..." />
+      </GridItem>
+    </Grid>
+  )
 }
