@@ -27,8 +27,9 @@ export function Slider({ image, title, subtitle, continentRoute }: swiperProps) 
       >
         <Box width={["220px", "220px", "220px", "400px"]}>
           <Link
-            as="a"
-            textDecoration="none"
+            _hover={{
+              textDecoration: "none",
+            }}
             href={`/continents/${continentRoute}`}
           >
             <Text
